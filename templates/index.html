@@ -12,3 +12,9 @@
 <canvas id="canv"></canvas>
 </div>
 
+{% endblock %}
+
+{% block js_tags %}
+
+<script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+{% endblock %}

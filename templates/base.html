@@ -13,19 +13,19 @@
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 	<!-- JavaScript in the Head Tag -->
-	{% block head_js %}{% endblock %}
-	<!-- Page Titles -->
+    {% block head_js %}{% endblock %}
+    
+    <!-- Page Titles -->
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 
 
 <body>
-
     <header>
 		<!-- Navigation Bar for Each Web Page -->
 		<div class="container">
 		<nav class="navbar navbar-expand-sm navbar-dark bg-custom fixed-top">
-				<a class="navbar-brand" href="#"> <img id="logo" alt="Logo" src="static/images/logo.jpg" width="60" height="50"/> <span>Python Ciphers App</span></a>
+				<a class="navbar-brand" href="{{ url_for('index') }}"> <img id="logo" alt="Logo" src="static/images/logo.jpg" width="60" height="50"/> <span>Python Ciphers App</span></a>
 			<button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarNavDropdown"
 				aria-expanded="navbarNavDropdown" aria-controls="false">
 
@@ -34,7 +34,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a href="#" class="nav-link">Home</a>
+						<a href="{{ url_for('index') }}" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link">Hackathon</a>
@@ -52,6 +52,10 @@
 		</nav>
 
     </header>
+    <article>
+		<!-- Content of the Web Pages -->
+		{% block content %} {% endblock %}
+	</article>
     
 <!-- Script tags -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
