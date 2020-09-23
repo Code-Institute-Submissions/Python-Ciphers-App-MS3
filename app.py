@@ -34,6 +34,30 @@ def index():
     return render_template('register.html')
 
 
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    """
+    This function handles user registration:
+    If the user tries to register with a username or a previously registered email that already exists in DB we notify
+    Otherwise we crate the user entry data dictionary and insert it into DB
+    """
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        user = {'username': username, 'email': email, 'password': password}
+
+        if mongo.db.users.find_one({"username": username}): 
+            return 'This User already exists'
+        elif mongo.db.users.find_one({"email": email}):
+            return 'This Email was already used for registration'
+        else:
+            mongo.db.users.insert_one(user)
+            session['username'] = user['username']
+            return render_template('index.html', email=user['email'], password=user['password'])
+
+    return render_template('register.html')
+
 
 
 # Prior to deployment set debug=False
