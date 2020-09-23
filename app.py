@@ -20,12 +20,18 @@ app.config["MONGO_DBNAME"] = "ms3_trial"
 
 mongo = PyMongo(app)
 
-USER_DATA = mongo.db.users.find_one({'email': "test1@test1.com"})
-print(USER_DATA)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    """
+    This function renders the home page content when the user visits "/" and is logged in, otherwise it renders the registration page
+    Once a user is authenticated there's no need to authenticate him again 
+    """
+    username = session.get('username')
+    if username:
+        users = mongo.db.users.find()
+        return render_template('index.html', users=users)
+    return render_template('register.html')
 
 
 
