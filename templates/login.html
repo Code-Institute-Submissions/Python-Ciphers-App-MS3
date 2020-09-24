@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	Login
+{% endblock %}
+
+<!-- Form for User Login -->
+{% block content %}
+    <section class="section-padding section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="text-center">Explore Python Cryptography!</h1>
+                    <form action="{{ url_for('login') }}" method="POST">
+                        <div class="form-group">
+                            <label>Email-Address</label>
+                            <!-- the form-control class is used to style the text-box -->
+                            <input type="text" name="email" class="form-control" placeholder="Email-Address" required>
+                        </div>
+                        <div class="form-groups">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Login</button>
+                    </form>
+                    <div class="text-center">
+                        <a href="{{ url_for('register') }}">Register Here Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
