@@ -118,3 +118,112 @@ guv6Jv6Jz!J6rp5r7Jzr66ntrM
         </div>
     </div>
 </section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Hacking the Caesar Cipher with Brute-Force</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>We can hack the Caesar cipher by using a cryptanalytic technique called brute-force. A brute-force attack tries every possible decryption key for a cipher. Nothing stops a cryptanalyst from guessing one key, decrypting the ciphertext with that key, looking at the output, and then moving on to the next key if they didn’t find the secret message. Because the brute-force technique is so effective against the Caesar cipher, you shouldn’t actually use the Caesar cipher to encrypt secret information.</p>
+                    <p>Ideally, the ciphertext would never fall into anyone’s hands. But Kerckhoffs’s principle (named after the 19th-century cryptographer Auguste Kerckhoffs) states that a cipher should still be secure even if everyone knows how the cipher works and someone else has the ciphertext. This principle was restated by the 20th-century mathematician Claude Shannon as Shannon’s maxim: “The enemy knows the system.” The part of the cipher that keeps the message secret is the key, and for the Caesar cipher this information is very easy to find.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Caesar Cipher Hacker Program </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <pre>
+                        <h5>caesarHacker.py</h5>
+# Caesar Cipher Hacker
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+
+message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM'
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345
+  67890 !?.'
+
+# Loop through every possible key:
+for key in range(len(SYMBOLS)):
+    # It is important to set translated to the blank string so that the
+    # previous iteration's value for translated is cleared:
+    translated = ''
+
+    # The rest of the program is almost the same as the Caesar program:
+
+    # Loop through each symbol in message:
+    for symbol in message:
+        if symbol in SYMBOLS:
+            symbolIndex = SYMBOLS.find(symbol)
+            translatedIndex = symbolIndex - key
+
+            # Handle the wraparound:
+            if translatedIndex < 0:
+                translatedIndex = translatedIndex + len(SYMBOLS)
+
+            # Append the decrypted symbol:
+            translated = translated + SYMBOLS[translatedIndex]
+
+        else:
+            # Append the symbol without encrypting/decrypting:
+            translated = translated + symbol
+
+    # Display every possible decryption:
+    print('Key #%s: %s' % (key, translated))
+                        </pre>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Running the Caesar Cipher Hacker Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>The Caesar cipher hacker program prints the following output when you run it. It breaks the ciphertext "guv6Jv6Jz!J6rp5r7Jzr66ntrM" by decrypting the ciphertext with all 66 possible keys:</p>
+                    <pre>
+Key #0: guv6Jv6Jz!J6rp5r7Jzr66ntrM
+Key #1: ftu5Iu5Iy I5qo4q6Iyq55msqL
+Key #2: est4Ht4Hx0H4pn3p5Hxp44lrpK
+Key #3: drs3Gs3Gw9G3om2o4Gwo33kqoJ
+Key #4: cqr2Fr2Fv8F2nl1n3Fvn22jpnI
+--snip--
+Key #11: Vjku?ku?o1?ugetgv?oguucigB
+Key #12: Uijt!jt!nz!tfdsfu!nfttbhfA
+<b>Key #13: This is my secret message.</b>
+Key #14: Sghr0hr0lx0rdbqds0ldrrZfd?
+Key #15: Rfgq9gq9kw9qcapcr9kcqqYec!
+--snip--
+Key #61: lz1 O1 O5CO wu0w!O5w  sywR
+Key #62: kyz0Nz0N4BN0vt9v N4v00rxvQ
+Key #63: jxy9My9M3AM9us8u0M3u99qwuP
+Key #64: iwx8Lx8L2.L8tr7t9L2t88pvtO
+Key #65: hvw7Kw7K1?K7sq6s8K1s77ousN
+                    </pre>
+                    <p>Because the decrypted output for key 13 is plain English, we know the original encryption key must have been 13.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
