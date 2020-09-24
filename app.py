@@ -26,6 +26,7 @@ def index():
     """
     This function renders the home page content when the user visits "/" and is logged in, otherwise it renders the registration page
     Once a user is authenticated there's no need to authenticate him again 
+    As far as authentication goes the only part database use is mandatory is when you want to check the username and password, we do this in login function
     """
     username = session.get('username')
     if username:
@@ -87,7 +88,14 @@ def register():
 
     return render_template('register.html')
 
-
+@app.route('/logout')
+def logout():
+    """
+    This function handles user logout
+    The passing of the default None value prevents the KeyError exception being raised in case someone who is not logged in would access /logout 
+    """
+    session.pop('username', None)
+    return redirect('/login')
 
 # Prior to deployment set debug=False
 
