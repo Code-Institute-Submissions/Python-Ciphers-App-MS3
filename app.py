@@ -107,6 +107,11 @@ def intro_to_cryptography():
 def reverse_cipher():
     # Renders the reverse-cipher page
     return render_template('reverse-cipher.html')
+
+@app.route('/caesar_cipher')
+def caesar_cipher():
+    # Renders the caesar-cipher page
+    return render_template('caesar-cipher.html')
     
 # Prior to deployment set debug=False
 
