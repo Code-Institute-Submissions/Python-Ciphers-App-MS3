@@ -118,6 +118,11 @@ def transposition_cipher():
     # Renders the transposition-cipher page
     return render_template('transposition-cipher.html')
 
+@app.route('/affine_cipher')
+def affine_cipher():
+    # Renders the affine-cipher page
+    return render_template('affine-cipher.html')
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
