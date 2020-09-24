@@ -102,6 +102,11 @@ def intro_to_cryptography():
     # Renders the intro-to-cryptography page
     addCipher = mongo.db.ciphers.find()
     return render_template('intro-to-cryptography.html', addCipher=addCipher)
+
+@app.route('/reverse_cipher')
+def reverse_cipher():
+    # Renders the reverse-cipher page
+    return render_template('reverse-cipher.html')
     
 # Prior to deployment set debug=False
 
