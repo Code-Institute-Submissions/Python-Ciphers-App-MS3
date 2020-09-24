@@ -37,3 +37,43 @@
         </div>
     </div>
 </section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Reverse Cipher Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box words">
+                    <pre>
+                    <h5>reverseCipher.py</h5>
+# Reverse Cipher
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+     
+message = 'Three can keep a secret, if two of them are dead.'
+translated = ''
+i = len(message) - 1
+while i >= 0:
+    translated = translated + message[i]
+    i = i - 1
+print(translated)
+                    </pre>
+                    <p>When you run the reverseCipher.py program, the output looks like this:</p>
+                    <pre>
+.daed era meht fo owt fi ,terces a peek nac eerhT
+                    </pre>
+                    <p>To decrypt this message, copy the '.daed era meht fo owt fi ,terces a peek nac eerhT' text to the clipboard then paste it as the string value stored in message variable</p>
+                    <p>Now when you run the reverseCipher.py program, the output decrypts to the original message:</p>
+                    <pre>
+Three can keep a secret, if two of them are dead.
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
