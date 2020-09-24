@@ -112,7 +112,12 @@ def reverse_cipher():
 def caesar_cipher():
     # Renders the caesar-cipher page
     return render_template('caesar-cipher.html')
-    
+
+@app.route('/transposition_cipher')
+def transposition_cipher():
+    # Renders the transposition-cipher page
+    return render_template('transposition-cipher.html')
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
