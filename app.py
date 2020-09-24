@@ -35,6 +35,14 @@ def index():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
+    """
+    This function handles user login as following:
+    It renders home page if the user is logged in
+    If the user is trying to login via POST/Submit method we grab from DB the USER_DATA by filtering using email address 
+    and if the password introduced in the form matches the DB password then login is succesful
+    If the user email does not match the user password in DB we return an error. We don't want a user to login with another user valid password but only his/her personal one.
+    If the user tries to login with an email or password that does not exist in DB we intuitively render registration page
+    """
     username = session.get('username')
     if username:
         users = mongo.db.users.find()
@@ -51,8 +59,10 @@ def login():
                     return render_template('index.html')
                 else:
                     return 'Invalid email or password'
+            else:
+                return render_template('register.html')
+        return render_template('login.html')
  
-
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     """
