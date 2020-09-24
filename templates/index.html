@@ -12,6 +12,83 @@
 <canvas id="canv"></canvas>
 </div>
 
+
+<!-- Section to show and link to Ciphers pages -->
+
+<section class="green-section" id="hp-section1">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 heading-margin">
+				<h4>Let's decrypt some knowledge!</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('intro_to_cryptography') }}" class="box-img-1" title="A background image of some people staying in their desks and looking a matrix on a big screen">
+						<div>
+							<h4>An Introduction to Cryptography</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('reverse_cipher') }}" class="box-img-2" title="A background image of a binary code and locker">
+						<div>
+							<h4>The Reverse Cipher</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('caesar_cipher') }}" class="box-img-3" title="A background image of code being displayed on a screen and a hoodie outline">
+						<div>
+							<h4>The Caesar Cipher</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('transposition_cipher') }}" class="box-img-4" title="A background image of code dispayed on long screen">
+						<div>
+							<h4>The Transposition Cipher</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('affine_cipher') }}" class="box-img-5" title="A background image of a desk with a laptop">
+						<div>
+							<h4>The Affine Cipher</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-4">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('vigenere_cipher') }}" class="box-img-6" title="A background image of 3 vertically screns of matrix on long and a chair in front of them.">
+						<div>
+							<h4>The Vigenere Cipher</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="box-wrapper-overflow">
+					<a href="{{ url_for('your_ciphers') }}" class="box-img-7" title="A background image of a laptop with code displayed on its screen and a bulb">
+						<div>
+							<h4>Add your Python Cipher Here!</h4>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 {% endblock %}
 
 {% block js_tags %}
