@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	The Transposition Cipher
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>The Transposition Cipher</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cipher Content -->
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Introduction</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>The Caesar cipher isn’t secure; it doesn’t take much for a computer to brute-force through all 66 possible keys. The transposition cipher, on the other hand, is more difficult to brute-force because the number of possible keys depends on the message’s length. There are many different types of transposition ciphers, including the rail fence cipher, route cipher, Myszkowski transposition cipher, and disrupted transposition cipher. This chapter covers a simple transposition cipher called the columnar transposition cipher.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>How the Transposition Cipher Works</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>Instead of substituting characters with other characters, the transposition cipher rearranges the message’s symbols into an order that makes the original message unreadable. Because each key creates a different ordering, or permutation, of the characters, a cryptanalyst doesn’t know how to rearrange the ciphertext back into the original message.</p>
+                    <pre>
+The steps for encrypting with the transposition cipher are as follows:
+    1. Count the number of characters in the message and the key.
+    2. Draw a row of a number of boxes equal to the key (for example, 8 boxes for a key of 8).
+    3. Start filling in the boxes from left to right, entering one character per box.
+    4. When you run out of boxes but still have more characters, add another row of boxes.
+    5. When you reach the last character, shade in the unused boxes in the last row.
+    6. Starting from the top left and going down each column, write out the characters. 
+    7. When you get to the bottom of a column, move to the next column to the right. Skip any shaded boxes. 
+    8. This will be the ciphertext.                    
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Transposition Cipher Encryption</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <pre>
+                    <h5>transpositionEncrypt.py</h5>
+# Transposition Cipher Encryption
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+
+import pyperclip
+
+def main():
+    myMessage = 'Common sense is not so common.'
+    myKey = 8
+
+    ciphertext = encryptMessage(myKey, myMessage)
+
+    # Print the encrypted string in ciphertext to the screen, with
+    # a | ("pipe" character) after it in case there are spaces at
+    # the end of the encrypted message:
+    print(ciphertext + '|')
+
+    # Copy the encrypted string in ciphertext to the clipboard:
+    pyperclip.copy(ciphertext)
+
+def encryptMessage(key, message):
+    # Each string in ciphertext represents a column in the grid:
+    ciphertext = [''] * key
+
+    # Loop through each column in ciphertext:
+    for column in range(key):
+        currentIndex = column
+
+        # Keep looping until currentIndex goes past the message length:
+        while currentIndex < len(message):
+            # Place the character at currentIndex in message at the
+            # end of the current column in the ciphertext list:
+            ciphertext[column] += message[currentIndex]
+
+            # Move currentIndex over:
+            currentIndex += key
+
+    # Convert the ciphertext list into a single string value and return it:
+    return ''.big(ciphertext)
+
+# If transpositionEncrypt.py is run (instead of imported as a module) call
+# the main() function:
+if __name__ == '__main__':
+    main()
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Running the Transposition Cipher Encryption Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>When you run the transpositionEncrypt.py program, it produces this output:</p>
+                    <pre>
+Cenoonommstmme oo snnio. s s c|                   
+                    </pre>
+                    <p>The vertical pipe character (|) marks the end of the ciphertext in case there are spaces at the end. This ciphertext (without the pipe character at the end) is also copied to the clipboard, so you can paste it into an email to someone. If you want to encrypt a different message or use a different key, change the value assigned to the myMessage and myKey variables on lines 7 and 8. Then run the program again.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
