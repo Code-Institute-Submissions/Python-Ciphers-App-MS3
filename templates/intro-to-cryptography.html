@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	An Introduction to Cryptography
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>An Introduction to Cryptography</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Intro to Cryptography Content -->
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>What Is Cryptography?</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>Historically, anyone who has needed to share secrets with others, such as spies, soldiers, hackers, pirates, merchants, tyrants, and political activists, has relied on cryptography to make sure their secrets stay secret. Cryptography is the science of using secret codes.</p>
+                    <p>Encryption keeps a message secret from other people who can’t decipher it, even if they get their hands on the encrypted message. An encrypted message looks exactly like random nonsense.</p>
+                    <p>A cryptographer uses and studies secret codes. Of course, these secret messages don’t always remain secret. A cryptanalyst, also called a code breaker or hacker, can hack secret codes and read other people’s encrypted messages. This website teaches you how to encrypt and decrypt messages using various techniques. But unfortunately (or fortunately), the type of hacking you’ll learn in these pages isn’t dangerous enough to get you in trouble with the law.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Codes vs. Ciphers</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>Unlike ciphers, codes are made to be understandable and publicly available. Codes substitute messages with symbols that anyone should be able to look up to translate into a message.</p>
+                    <p>In the early 19th century, one well-known code came from the development of the electric telegraph, which allowed for near-instant communication across continents through wires. Sending messages by telegraph was much faster than the previous alternative of sending a horseback rider carrying a bag of letters. However, the telegraph couldn’t directly send written letters drawn on paper. Instead, it could send only two types of electric pulses: a short pulse called a “dot” and a long pulse called a “dash.”</p>
+                    <p>To convert letters of the alphabet into these dots and dashes, you need an encoding system to translate English to electric pulses. The process of converting English into dots and dashes to send over a telegraph is called encoding, and the process of translating electric pulses to English when a message is received is called decoding. The code used to encode and decode messages over telegraphs (and later, radio) was called Morse code.Morse code was developed by Samuel Morse and Alfred Vail.</p>
+                    <p>By tapping dots and dashes with a one-button telegraph, a telegraph operator could communicate an English message to someone on the other side of the world almost instantly! (To learn more about Morse code, visit <a href="https://www.nostarch.com/crackingcodes/"> Cracking Codes with Python </a>)</p>
+                    <p>In contrast with codes, a cipher is a specific type of code meant to keep messages secret. You can use a cipher to turn understandable English text, called plaintext, into gibberish that hides a secret message, called the ciphertext. A cipher is a set of rules for converting between plaintext and ciphertext. These rules often use a secret key to encrypt or decrypt that only the communicators know. In the following pages content, you’ll learn several ciphers and write programs to use these ciphers to encrypt and decrypt text.</p>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
