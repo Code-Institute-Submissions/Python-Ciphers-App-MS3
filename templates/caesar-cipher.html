@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	The Caesar Cipher
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>The Caesar Cipher</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cipher Content -->
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Introduction</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>The reverse cipher we have studied in the previous lesson always encrypts the same way. But the Caesar cipher uses keys, which encrypt the message differently depending on which key is used. The keys for the Caesar cipher are the integers from 0 to 25. Even if a cryptanalyst knows the Caesar cipher was used, that alone doesn’t give them enough information to break the cipher. They must also know the key.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Caesar Cipher Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <pre>
+                    <h5>caesarCipher.py</h5>
+# Caesar Cipher
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+# Download the pyperclip.py module from <a href="https://www.nostarch.com/crackingcodes/">pyperclip.py</a> and place it in the same directory 
+import pyperclip
+
+# The string to be encrypted/decrypted:
+message = 'This is my secret message.'
+
+# The encryption/decryption key:
+key = 13
+
+# Whether the program encrypts or decrypts:
+mode = 'encrypt' # Set to either 'encrypt' or 'decrypt'.
+
+# Every possible symbol that can be encrypted:
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
+
+# Store the encrypted/decrypted form of the message:
+translated = ''
+
+for symbol in message:
+    # Note: Only symbols in the SYMBOLS string can be encrypted/decrypted.
+    if symbol in SYMBOLS:
+        symbolIndex = SYMBOLS.find(symbol)
+
+        # Perform encryption/decryption:
+        if mode == 'encrypt':
+            translatedIndex = symbolIndex + key
+        elif mode == 'decrypt':
+            translatedIndex = symbolIndex - key
+
+        # Handle wraparound, if needed:
+        if translatedIndex >= len(SYMBOLS):
+            translatedIndex = translatedIndex - len(SYMBOLS)
+        elif translatedIndex < 0:
+            translatedIndex = translatedIndex + len(SYMBOLS)
+
+        translated = translated + SYMBOLS[translatedIndex]
+    else:
+        # Append the symbol without encrypting/decrypting:
+        translated = translated + symbol
+
+# Output the translated string:
+print(translated)
+pyperclip.copy(translated)
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Running the Caesar Cipher Program </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>When you run the caesarCipher.py program, the output looks like this:</p>
+                    <pre>
+guv6Jv6Jz!J6rp5r7Jzr66ntrM
+                    </pre>
+                    <p>The output is the string 'This is my secret message.' encrypted with the Caesar cipher using a key of 13. The Caesar cipher program you just ran automatically copies this encrypted string to the clipboard so you can paste it in an email or text file. As a result, you can easily send the encrypted output from the program to another person.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
