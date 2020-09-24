@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% block page_title %}
+	The Reverse Cipher
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>The Reverse Cipher</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cipher Content -->
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Introduction</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box words">
+                    <p>The reverse cipher encrypts a message by printing it in reverse order. So “Hello, world!” encrypts to “!dlrow ,olleH”. To decrypt, or get the original message, you simply reverse the encrypted message. The encryption and decryption steps are the same.</p>
+                    <p>However, this reverse cipher is weak, making it easy to figure out the plaintext. Just by looking at the ciphertext, you can figure out the message is in reverse order.</p>
+                    <pre>
+.syas ti tahw tuo erugif llits ylbaborp nac uoy ,detpyrcne si siht hguoht neve ,elpmaxe roF
+                    </pre>
+                    <p>But the code for the reverse cipher program is easy to explain, so we’ll use it as our first encryption program.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,5 @@
 # Python-Ciphers-App-MS3
 
-# Python-Ciphers-App-MS3
-
 This full-stack website represents the third milestone project I designed at Code Institute Full Stack Development course, specifically the Data Centric Development module.
 The main focus of this project was to have a website that allows my registered users to manage a common dataset about the chosen topic, respectively cryptography techniques using Python code. 
 
