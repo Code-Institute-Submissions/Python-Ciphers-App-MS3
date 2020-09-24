@@ -97,6 +97,12 @@ def logout():
     session.pop('username', None)
     return redirect('/login')
 
+@app.route('/intro_to_cryptography')
+def intro_to_cryptography():
+    # Renders the intro-to-cryptography page
+    addCipher = mongo.db.ciphers.find()
+    return render_template('intro-to-cryptography.html', addCipher=addCipher)
+    
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
