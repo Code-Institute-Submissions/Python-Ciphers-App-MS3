@@ -33,6 +33,25 @@ def index():
         return render_template('index.html', users=users)
     return render_template('register.html')
 
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    username = session.get('username')
+    if username:
+        users = mongo.db.users.find()
+        return render_template('index.html', users=users)
+    else:
+        if request.method == 'POST':
+            email = request.form['email']
+            password = request.form['password']
+            USER_DATA = mongo.db.users.find_one({'email': email})
+            if USER_DATA:
+                if password == USER_DATA['password']:
+                    session['username'] = USER_DATA['username']
+                    print(session['username'])
+                    return render_template('index.html')
+                else:
+                    return 'Invalid email or password'
+ 
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
