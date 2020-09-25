@@ -128,6 +128,13 @@ def vigenere_cipher():
     # Renders the vigenere-cipher page
     return render_template('vigenere-cipher.html')
 
+@app.route('/your_ciphers')
+def your_ciphers():
+    # Renders your_ciphers page with the existent ciphers data from mongoDB
+    addCipher = mongo.db.ciphers.find()
+    return render_template('your-ciphers.html', add_cipher=addCipher)
+
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
