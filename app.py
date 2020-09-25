@@ -155,6 +155,22 @@ def add_your_cipher():
     # Renders add-your-cipher page
     return render_template('add-your-cipher.html', addCipher=mongo.db.ciphers.find())
 
+@app.route('/update_your_cipher/<addCipher_id>', methods=['GET', 'POST'])
+def update_your_cipher(addCipher_id):
+    # Allows users to update their own added ciphers
+    addCipher = mongo.db.ciphers
+    addCipher.update({'_id': ObjectId(addCipher_id)},
+                      {
+        "username": session['username'],
+        'cipher_name': request.form.get('heading'),
+        'heading': request.form.get('heading'),
+        'cipher_content': request.form.get('cipher_content'),
+    }
+    )
+    return redirect(url_for('your_ciphers', addCipher=addCipher))
+
+
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
