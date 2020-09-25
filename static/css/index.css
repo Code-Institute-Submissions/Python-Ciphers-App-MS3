@@ -16,3 +16,213 @@
         background-color: black;
         height: 600px;
     }
+
+        
+    /* Sections style */
+    
+    .section-padding {
+        padding-top: 60px;
+    }
+    .section-margin {
+        margin: 77px 0;
+        min-height: 60vh;
+    }
+    .green-section {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color:  #B9F18C;
+    }
+    
+    .yellow-section {
+        width: 100%;
+        padding: 115px 0;
+        text-align: center;
+        background-color:#E9EB87;
+    }
+    
+    .brown-section {
+        width: 100%;
+        padding: 70px 0;
+        color: #fff;
+        text-align: center;
+        background-color: #938274;
+    }
+    
+    .heading-margin {
+        margin-top: 40px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    /* ciphers boxes - Home Page */
+    .box-wrapper-overflow {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    
+    .box-img-1 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 20px;
+        background-image:url('../images/cipher-1.jpg');
+        background-position: center;
+        background-size: cover;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-1:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image: url('../images/cipher-1.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-2 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 20px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-2.jpg');
+        background-position: center;
+        background-size: cover;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-2:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image:  url('../images/cipher-2.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-3 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 20px;
+        background-image: url('../images/cipher-3.jpg');
+        background-position: center;
+        background-size: cover;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-3:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-3.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-4 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 10px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-4.jpg');
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.2s linear;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-4:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-4.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-5 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 10px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-5.jpg');
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.2s linear;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-5:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-5.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-6 {
+        width: 100%;
+        height: 350px;
+        color: #fff;
+        padding: 0 10px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-6.jpg');
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.2s linear;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-6:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-6.jpg');
+        opacity: .5;
+    }
+    
+    .box-img-7 {
+        width: 100%;
+        height: 300px;
+        color: #fff;
+        padding: 0 10px;
+        z-index: 99;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/add-cipher.jpg');
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.2s linear;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .box-img-7:hover {
+        color: #fff;
+        text-decoration: none;
+        background-image:  url('../images/add-cipher.jpg');
+        opacity: .5;
+    }
