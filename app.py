@@ -188,6 +188,12 @@ def edit_your_cipher(addCipher_id):
     addCipher = mongo.db.ciphers.find_one({"_id": ObjectId(addCipher_id)})
     return render_template('edit-your-cipher.html', addCipher=addCipher)
 
+@app.route('/delete_cipher/<addCipher_id>')
+def delete_cipher(addCipher_id):
+    # Allows users to delete their own added ciphers
+    mongo.db.ciphers.delete_one({"_id": ObjectId(addCipher_id)})
+    return redirect(url_for('your_ciphers'))
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
