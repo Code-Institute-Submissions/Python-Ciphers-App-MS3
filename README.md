@@ -44,7 +44,7 @@ A user must not be overloaded with information. The interface must remain clean 
 The font-family that I used was Noto Serif providing information in a clean, clear way and Press Start 2P chosen for the main headings.
 Each of the fonts used were sourced from Google Fonts.
 
-The color palette was obtained using Coolors (https://coolors.co/) [link to color palette from design folder]:
+The color palette was obtained using Coolors https://coolors.co/
 
 [colors-palette](design/python_ciphers_app_colors.pdf)
 
