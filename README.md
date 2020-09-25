@@ -29,3 +29,34 @@ This website is carved into the following sections:
 - As a user, I would like to be part of a community and share ideas or discvover bugs about our existent ciphers or simply speak up about interesting cryptography related news or trends.
 - As a user, I would like to edit or delete my community created posts.
 - As a user, I would like to contact the creator of the website for questions about the content overall, clarification where needed of code examples, report bugs discovered.
+
+## Easy to navigate
+Navigation links must be uniform, easy to recognise, the user  must be able to access any necessary info as quickly as possible.
+A user must not be overloaded with information. The interface must remain clean and uncrowded.
+The site is quite simple and straight forward.There are two links in the navbar for the two main sections-Home and Hackaton.
+The add, edit and delete icons are easy to understand and use.
+    
+## Security
+Whether handling sensitive information, any data stored must be keep secure.
+A user must not be overloaded with information. The interface must remain clean and uncrowded.
+
+## Front-End Design
+The font-family that I used was Noto Serif providing information in a clean, clear way and Press Start 2P chosen for the main headings.
+Each of the fonts used were sourced from Google Fonts.
+
+The color palette was obtained using Coolors (https://coolors.co/) [link to color palette from design folder]:
+
+* ![#072609](https://via.placeholder.com/15/072609/000000?text=+) `#072609`
+* ![#7B5E7B](https://via.placeholder.com/15/7B5E7B/000000?text=+) `#7B5E7B`
+* ![#938274](https://via.placeholder.com/15/938274/000000?text=+) `#938274`
+* ![#E9EB87](https://via.placeholder.com/15/E9EB87/000000?text=+) `#E9EB87`
+* ![#B9F18C](https://via.placeholder.com/15/B9F18C/000000?text=+) `#B9F18C`
+
+My goal was to make the website look simple and modern. I added a Matrix Digital Rain Effect with JS on the homepage to integrate with the overall idea of the website. Matrix digital rain contains a green codes rain loop with neon green glowing effect. All the text flows downwards crating a raining effect and keeps glowing. Moreover the text overlapping makes a proper ciphers background theme.
+
+[colors-palette](design/python_ciphers_app_colors.pdf)
+
+## Wireframes
+I used Balsamiq to create wireframes which will provide an overview of how the website will look like on mobile screen size.
+(https://balsamiq.com/)
+[wireframes](wireframes/python_ciphers_app_wireframes_desktop_mobile.pdf)
