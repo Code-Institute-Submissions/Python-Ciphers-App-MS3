@@ -136,6 +136,19 @@ def your_ciphers():
     addCipher = mongo.db.ciphers.find()
     return render_template('your-ciphers.html', add_cipher=addCipher)
 
+@app.route('/hackathon')
+def hackathon():
+    # Returns the Hackathon page with its posts from mongoDB
+    username = session.get('username')
+    if username:
+        posts = []
+        for result in mongo.db.posts.find():
+            result["initDate"] = result['initDate'].strftime("%A %D %H:%M")
+            print(result['initDate'])
+            posts.append(result)
+        return render_template('hackathon.html', posts=posts, cipher=mongo.db.ciphers.find())
+    else: 
+        return render_template('register.html')
 
 # Prior to deployment set debug=False
 
