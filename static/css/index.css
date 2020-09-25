@@ -256,3 +256,13 @@
         position: relative;
         top: 10px;
       }
+
+    /* Form Section - Home Page */
+    .contact-style {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    
