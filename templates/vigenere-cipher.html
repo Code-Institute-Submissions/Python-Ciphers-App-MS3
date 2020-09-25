@@ -1,0 +1,150 @@
+{% extends 'base.html' %} 
+
+{% block page_title %}
+	The Vigenere Cipher
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>The Vigenere Cipher</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cipher Content -->
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Introduction</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>The Italian cryptographer Giovan Battista Bellaso was the first person to describe the Vigenère cipher in 1553, but it was eventually named after the French diplomat Blaise de Vigenère, one of many people who reinvented the cipher in subsequent years. It was known as “le chiffre indéchiffrable,” which means “the indecipherable cipher,” and remained unbroken until British polymath Charles Babbage broke it in the 19th century.</p>
+                    <p>Because the Vigenère cipher has too many possible keys to brute-force, even with our English detection module, it’s one of the strongest ciphers discussed so far in these pages.</p>
+                    <p>Unlike the Caesar cipher, the Vigenère cipher has multiple keys. Because it uses more than one set of substitutions, the Vigenère cipher is a polyalphabetic substitution cipher. Unlike with the simple substitution cipher, frequency analysis alone will not defeat the Vigenère cipher. Instead of using a numeric key between 0 and 25 as we did in the Caesar cipher, we use a letter key for the Vigenère.</p>
+                    <p>The Vigenère key is a series of letters, such as a single English word, that is split into multiple single-letter subkeys that encrypt letters in the plaintext. For example, if we use a Vigenère key of PIZZA, the first subkey is P, the second subkey is I, the third and fourth subkeys are both Z, and the fifth subkey is A. The first subkey encrypts the first letter of the plaintext, the second subkey encrypts the second letter, and so on. When we get to the sixth letter of the plaintext, we return to the first subkey.</p>
+                    <p>Using the Vigenère cipher is the same as using multiple Caesar ciphers. Instead of encrypting the whole plaintext with one Caesar cipher, we apply a different Caesar cipher to each letter of the plaintext.</p>
+                    <p>Each subkey is converted into an integer and serves as a Caesar cipher key. For example, the letter A corresponds to the Caesar cipher key 0. The letter B corresponds to key 1, and so on up to Z for key 25.</p>
+                    <p>A Vigenère key doesn’t have to be a real word like PIZZA. It can be any combination of letters of any length, such as the twelve-letter key DURIWKNMFICK. In fact, not using a word that can be found in the dictionary is best.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Vigenère Cipher Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <pre>
+                    <h5>vigenereCipher.py</h5>
+# Vigenere Cipher (Polyalphabetic Substitution Cipher)
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+
+import pyperclip
+
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+def main():
+    # This text can be downloaded from https://www.nostarch.com/
+      crackingcodes/:
+    myMessage = """Alan Mathison Turing was a British mathematician,
+      logician, cryptanalyst, and computer scientist."""
+    myKey = 'ASIMOV'
+    myMode = 'encrypt' # Set to either 'encrypt' or 'decrypt'.
+
+    if myMode == 'encrypt':
+        translated = encryptMessage(myKey, myMessage)
+    elif myMode == 'decrypt':
+        translated = decryptMessage(myKey, myMessage)
+
+    print('%sed message:' % (myMode.title()))
+    print(translated)
+    pyperclip.copy(translated)
+    print()
+    print('The message has been copied to the clipboard.')
+
+def encryptMessage(key, message):
+    return translateMessage(key, message, 'encrypt')
+
+def decryptMessage(key, message):
+    return translateMessage(key, message, 'decrypt')
+
+def translateMessage(key, message, mode):
+    translated = [] # Stores the encrypted/decrypted message string.
+
+    keyIndex = 0
+    key = key.upper()
+
+    for symbol in message: # Loop through each symbol in message.
+        num = LETTERS.find(symbol.upper())
+        if num != -1: # -1 means symbol.upper() was not found in LETTERS.
+            if mode == 'encrypt':
+                num += LETTERS.find(key[keyIndex]) # Add if encrypting.
+            elif mode == 'decrypt':
+                num -= LETTERS.find(key[keyIndex]) # Subtract if
+                  decrypting.
+
+            num %= len(LETTERS) # Handle any wraparound.
+
+            # Add the encrypted/decrypted symbol to the end of translated:
+            if symbol.isupper():
+                translated.append(LETTERS[num])
+            elif symbol.islower():
+                translated.append(LETTERS[num].lower())
+
+            keyIndex += 1 # Move to the next letter in the key.
+            if keyIndex == len(key):
+                keyIndex = 0
+        else:
+            # Append the symbol without encrypting/decrypting:
+            translated.append(symbol)
+
+    return ''.big(translated)
+
+# If vigenereCipher.py is run (instead of imported as a module), call
+# the main() function:
+if __name__ == '__main__':
+    main()
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Running the Vigenère Cipher Program </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>When you run the affineCipher.py program, the output looks like this:</p>
+                    <pre>
+Encrypted message:
+Adiz Avtzqeci Tmzubb wsa m Pmilqev halpqavtakuoi, lgouqdaf, kdmktsvmztsl, izrxoexghzr kkusitaaf.
+The message has been copied to the clipboard.
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
