@@ -150,6 +150,11 @@ def hackathon():
     else: 
         return render_template('register.html')
 
+@app.route('/add_your_cipher')
+def add_your_cipher():
+    # Renders add-your-cipher page
+    return render_template('add-your-cipher.html', addCipher=mongo.db.ciphers.find())
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
