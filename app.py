@@ -14,7 +14,7 @@ export MONGO_URI="MONGO_URL"
 :wr save and exit then enter command
 source ~/.bashrc
 """
-
+app.secret_key = os.environ.get("SECRET_KEY")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.config["MONGO_DBNAME"] = "ms3_trial"
 
