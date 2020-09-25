@@ -1,7 +1,8 @@
 @import "index.css";
 @import "navbar.css";
 @import "footer.css";
-
+@import "ciphers-lessons.css";
+@import "hackathon.css";
 
 
 html {
@@ -12,7 +13,7 @@ h1, h2, h5 {
 }
 h3, h4 { 
         font-family:'Press Start 2P';
-    }   
-body{
+}   
+body {
         font-family:'Noto Serif';
-    }
+}
