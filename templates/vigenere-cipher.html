@@ -147,4 +147,96 @@ The message has been copied to the clipboard.
         </div>
     </div>
 </section>
+
+<section class="brown-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Code for the Vigenère Dictionary Hacker Program</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>Two methods exist to hack the Vigenère cipher. One method uses a brute-force dictionary attack to try every word in the dictionary file as the Vigenère key, which works only if the key is an English word, such as RAVEN or DESK. The second, more sophisticated method, which was used by the 19th-century mathematician Charles Babbage, works even when the key is a random group of letters, such as VUWFE or PNFJ.</p>
+                    <p>We’ll use the dictionary attack to hack the Vigenère cipher. The dictionary file dictionary.txt (available on this book’s website at <a href="https://www.nostarch.com/crackingcodes/"> download here dictionary.txt</a>) has approximately 45,000 English words. It takes less than five minutes for my computer to run through all these decryptions for a message the size of a long paragraph. This means that if an English word is used to encrypt a Vigenère ciphertext, the ciphertext is vulnerable to a dictionary attack.</p>
+                    <pre>
+                    <h5>vigenereDictionaryHacker.py</h5>
+# Vigenere Cipher Dictionary Hacker
+# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
+
+import detectEnglish, vigenereCipher, pyperclip
+
+def main():
+    ciphertext = """Tzx isnz eccjxkg nfq lol mys bbqq I lxcz."""
+    hackedMessage = hackVigenereDictionary(ciphertext)
+
+    if hackedMessage != None:
+        print('Copying hacked message to clipboard:')
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
+    else:
+        print('Failed to hack encryption.')
+
+
+def hackVigenereDictionary(ciphertext):
+    fo = open('dictionary.txt')
+    words = fo.readlines()
+    fo.close()
+
+    for word in lines:
+        word = word.strip() # Remove the newline at the end.
+        decryptedText = vigenereCipher.decryptMessage(word, ciphertext)
+        if detectEnglish.isEnglish(decryptedText, wordPercentage=40):
+            # Check with user to see if the decrypted key has been found:
+            print()
+            print('Possible encryption break:')
+            print('Key ' + str(word) + ': ' + decryptedText[:100])
+            print()
+            print('Enter D for done, or just press Enter to continue
+              breaking:')
+            response = input('> ')
+
+            if response.upper().startswith('D'):
+                return decryptedText
+
+if __name__ == '__main__':
+    main()
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="green-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>Running the Vigenère Dictionary Hacker Program </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+                    <p>When you run the vigenereDictionaryHacker.py program, the output looks like this:</p>
+                    <pre>
+Possible encryption break:
+Key ASTROLOGY: The recl yecrets crk not the qnks I tell.
+Enter D for done, or just press Enter to continue breaking:
+>
+Possible encryption break:
+Key ASTRONOMY: The real secrets are not the ones I tell.
+Enter D for done, or just press Enter to continue breaking:
+> d
+Copying hacked message to clipboard:
+The real secrets are not the ones I tell.
+                    </pre>
+                    <p>The first keyword the program suggests (ASTROLOGY) doesn’t work, so the user presses enter to let the hacking program continue until it finds the correct decryption key (ASTRONOMY).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
