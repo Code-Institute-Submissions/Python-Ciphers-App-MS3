@@ -46,6 +46,8 @@ Each of the fonts used were sourced from Google Fonts.
 
 The color palette was obtained using Coolors (https://coolors.co/) [link to color palette from design folder]:
 
+[colors-palette](design/python_ciphers_app_colors.pdf)
+
 * ![#072609](https://via.placeholder.com/15/072609/000000?text=+) `#072609`
 * ![#7B5E7B](https://via.placeholder.com/15/7B5E7B/000000?text=+) `#7B5E7B`
 * ![#938274](https://via.placeholder.com/15/938274/000000?text=+) `#938274`
@@ -54,9 +56,8 @@ The color palette was obtained using Coolors (https://coolors.co/) [link to colo
 
 My goal was to make the website look simple and modern. I added a Matrix Digital Rain Effect with JS on the homepage to integrate with the overall idea of the website. Matrix digital rain contains a green codes rain loop with neon green glowing effect. All the text flows downwards crating a raining effect and keeps glowing. Moreover the text overlapping makes a proper ciphers background theme.
 
-[colors-palette](design/python_ciphers_app_colors.pdf)
-
 ## Wireframes
 I used Balsamiq to create wireframes which will provide an overview of how the website will look like on mobile screen size.
 (https://balsamiq.com/)
+
 [wireframes](wireframes/python_ciphers_app_wireframes_desktop_mobile.pdf)
