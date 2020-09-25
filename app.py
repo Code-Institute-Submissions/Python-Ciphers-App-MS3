@@ -123,6 +123,11 @@ def affine_cipher():
     # Renders the affine-cipher page
     return render_template('affine-cipher.html')
 
+@app.route('/vigenere_cipher')
+def vigenere_cipher():
+    # Renders the vigenere-cipher page
+    return render_template('vigenere-cipher.html')
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
