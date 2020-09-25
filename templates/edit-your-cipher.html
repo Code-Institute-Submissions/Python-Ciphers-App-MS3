@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Edit Your Cipher
+{% endblock %}
+
+{% block content %}
+<section class="section-padding section-margin">
+<!-- Page Heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center heading-margin">
+                <h1>Edit Your Cipher</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Form to Edit A Cipher -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ url_for('update_your_cipher', addCipher_id=addCipher._id) }}" method="POST" class="col-12 task-box text-center">
+                    <div class="row">
+                        <div class="col-4 offset-4">
+                            <input type="text" name="heading" value="{{addCipher.heading}}" class="form-control" placeholder="Cipher Heading">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <textarea id="cipher_content" name="cipher_content"
+                                placeholder="Description" required>{{addCipher.content}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fa fa-share 5x" aria-hidden="true">Send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
