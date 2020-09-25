@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	Your Python Ciphers
+{% endblock %}
+
+{% block content %}
+<!-- Page Banner with Heading -->
+<section class="ciphers-banner-img" title="A background image of a matrix and a hoodie outline">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Your Python Ciphers</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Button to Add A New Cipher -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading-margin text-center">
+                <h4>Add Your Own Python Ciphers to Help Decrypting Knowledge!</h4>
+            </div>
+                <div class="col-12 heading-margin text-center">
+                    <a href="{{ url_for('add_your_cipher') }}" button class="big-button">Add Your Own Python Cipher</button>
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
