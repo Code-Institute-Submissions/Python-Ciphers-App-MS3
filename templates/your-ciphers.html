@@ -32,4 +32,96 @@
 	</div>
 </section>
 
+<!-- Ciphers Added By Users -->
+{% for info in add_cipher %}
+{% if loop.index % 2 == 0 %}
+{% if info.heading == Null %}
+{{ Null }}
+{% else %}
+<section class="brown-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>{{ info.heading }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+
+                    <p>By: {{ info.username }}</p>
+                    <p>{{ info.cipher_content}}</p>
+
+                </div>
+            </div>
+        </div>
+        {% if info.username == session['username'] %}
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ url_for('delete_cipher', addCipher_id=info._id) }}">
+                    <button class="btn btn-danger" type="submit" name="action">Delete
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="{{ url_for('edit_your_cipher', addCipher_id=info._id) }}">
+                    <button class="btn btn-info" type="submit" name="action">Edit
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+{% else %}
+{% if info.heading == Null %}
+{{ Null }}
+{% else %}
+<section class="green-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12 heading-margin">
+                <h4>{{ info.heading }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-background-box">
+
+                    <p>By: {{ info.username }}</p>
+                    <p>{{ info.cipher_content}}</p>
+
+                </div>
+            </div>
+        </div>
+        {% if info.username == session['username'] %}
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ url_for('delete_cipher', addCipher_id=info._id) }}">
+                    <button class="btn btn-danger" type="submit" name="action">Delete
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+
+            <div class="col-6">
+                <a href="{{ url_for('edit_your_cipher', addCipher_id=info._id) }}">
+                    <button class="btn btn-info" type="submit" name="action">Edit
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+{% endif %}
+{% endfor %}
 {% endblock %}
