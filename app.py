@@ -182,6 +182,12 @@ def insert_cipher():
     })
     return redirect(url_for('your_ciphers'))
 
+@app.route('/edit_your_cipher/<addCipher_id>')
+def edit_your_cipher(addCipher_id):
+    # Allows users to edit their own added ciphers
+    addCipher = mongo.db.ciphers.find_one({"_id": ObjectId(addCipher_id)})
+    return render_template('edit-your-cipher.html', addCipher=addCipher)
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
