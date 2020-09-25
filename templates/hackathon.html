@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	Hackathon
+{% endblock %}
+
+{% block content %}
+
+<section class="section-padding section-margin">
+	<!-- Page Heading -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center heading-margin">
+				<h1>Welcome to Hackathon Playground!</h1>
+			</div>
+		</div>
+	</div>
+	<!-- Post Contents Added by Users -->
+	<div class="container">
+		{% for post in posts %}
+		<div class="row">
+			<div class="col-12">
+				<div class="hackathon-box text-center">
+
+					<div class="d-none d-sm-block">
+						<div class="flex-row">
+							<h5>By: {{ post.author }}</h5>
+						</div>
+					</div>
+					{% if post.edit_today != "None" %}
+					<div class="d-none d-sm-block">
+						<div class="flex-row">
+							<p>Created: {{ post.initDate }}</p>
+							<p>Edit: {{ post.edit_today }}</p>
+						</div>
+					</div>
+
+					<div class="d-block d-sm-none">
+						<h5>By: {{ post.author }}</h5>
+						<p>{{ post.initDate }}</p>
+						<p>Edit: {{ post.edit_today }}</p>
+					</div>
+					{% endif %}
+
+					<h4>Topic: {{ post.cipher_name }}</h4>
+
+					<p>{{ post.post_content }}</p>
+					{% if post.author == session['username'] %}
+					<div class="row">
+						<div class="col-6">
+							<a href="{{ url_for('delete_post', post_id=post._id) }}">
+								<button class="btn btn-danger" type="submit" name="action">Delete
+									<i class="fa fa-minus-square" aria-hidden="true"></i>
+								</button>
+							</a>
+						</div>
+
+						<div class="col-6">
+							<a href="{{ url_for('edit_post', post_id=post._id) }}">
+								<button class="btn btn-info" type="submit" name="action">Edit
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</button>
+							</a>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		<div class="row">
+				<div class="col-12 text-center">
+					<a href="{{ url_for('add_post') }}" button class="big-button">Add Your Post</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
