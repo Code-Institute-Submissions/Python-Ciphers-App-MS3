@@ -232,6 +232,11 @@ def edit_post(post_id):
     my_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     return render_template('edit-post.html', posts=my_post, ciphers=mongo.db.ciphers.find())
 
+@app.route('/delete_post/<post_id>')
+def delete_post(post_id):
+    # Deletes a post added by that specific user and redirects to hackathon page
+    mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
+    return redirect(url_for('hackathon'))
 
 # Prior to deployment set debug=False
 
