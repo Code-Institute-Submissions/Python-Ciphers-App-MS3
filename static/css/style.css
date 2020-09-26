@@ -1,19 +1,18 @@
-@import "index.css";
 @import "navbar.css";
 @import "footer.css";
+@import "index.css";
 @import "ciphers-lessons.css";
 @import "hackathon.css";
 
-
 html {
     scroll-behavior: smooth;
-}
+    }
 h1, h2, h5 {
     font-family:'Noto Serif';
-}
+    }
 h3, h4 { 
         font-family:'Press Start 2P';
-}   
+    }   
 body {
         font-family:'Noto Serif';
-}
+    }

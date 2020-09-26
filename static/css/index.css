@@ -16,8 +16,7 @@
         background-color: black;
         height: 600px;
     }
-
-        
+    
     /* Sections style */
     
     .section-padding {
@@ -226,8 +225,7 @@
         background-image:  url('../images/add-cipher.jpg');
         opacity: .5;
     }
-
-        
+    
     /* Big button that allows users to join Hackaton, add Ciphers or posts */
     .big-button {
         position: relative;
@@ -256,7 +254,7 @@
         position: relative;
         top: 10px;
       }
-
+    
     /* Form Section - Home Page */
     .contact-style {
         display: flex;
@@ -266,3 +264,15 @@
         margin: 0;
     }
     
+ /* Media sizes */
+    @media (min-width: 768px) {
+        .section-margin {
+            margin: 150px 0;
+        }
+    }
+       
+    @media (max-width: 768px) {
+        .big-button {
+        font-size: 18px;
+    }
+}
