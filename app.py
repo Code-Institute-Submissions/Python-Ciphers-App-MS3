@@ -226,6 +226,13 @@ def update_post(post_id):
     }})
     return redirect(url_for('hackathon'))
 
+@app.route('/edit_post/<post_id>')
+def edit_post(post_id):
+    # Renders the edit-post page
+    my_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template('edit-post.html', posts=my_post, ciphers=mongo.db.ciphers.find())
+
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
