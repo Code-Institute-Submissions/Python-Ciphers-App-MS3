@@ -13,12 +13,16 @@
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 	<!-- JavaScript in the Head Tag -->
-    {% block head_js %}{% endblock %}
-    
-    <!-- Page Titles -->
-    <title>{% block page_title %}{% endblock %}</title>
-</head>
+	{% block head_js %}{% endblock %}
+	<!-- Page Titles -->
+	<title>{% block page_title %}{% endblock %}</title>
+	
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="static/images/logo.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="static/images/logo.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="static/images/logo.jpg">
 
+</head>
 
 <body>
 	<header>
@@ -51,13 +55,12 @@
 			</div>
 		</nav>
 
-
-    </header>
-    <article>
+	</header>
+	<article>
 		<!-- Content of the Web Pages -->
 		{% block content %} {% endblock %}
 	</article>
-
+	
 	<!-- Footer for Each Web Page -->
 	<footer>
             <div>
