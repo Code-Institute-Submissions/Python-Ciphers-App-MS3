@@ -61,3 +61,84 @@ I used Balsamiq to create wireframes which will provide an overview of how the w
 (https://balsamiq.com/)
 
 [wireframes](wireframes/python_ciphers_app_wireframes_desktop_mobile.pdf)
+
+## Utilised Technologies
+### Languages
+- HTML5: used for the content structure of the website
+- CSS3: used to style  most of the elements on the page such as fonts, color, spacing, positioning etc.
+- JavaScript: to create the Matrix effect on the Home page and send e-mails to the admin 
+- Python3: To add functionalities through the back-end
+
+### Frameworks
+- Bootstrap: to easily adapt the website to be responsive for all users 
+- Flask: python micro framework application engine
+
+### Database
+- MongoDB Atlas: To store information into a database
+
+- Database Schema
+
+**users collection**
+
+| Key      	| Value          	| Data Type 	|
+|----------	|----------------	|-----------	|
+| _id      	| ObjectId("ID") 	| ObjectId  	|
+| username 	| "<username>"   	| string    	|
+| email    	| "<email>"      	| string    	|
+| password 	| "<password>"   	| string    	|
+
+**ciphers collection**
+
+| Key            	| Value                                    	| Data Type 	|
+|----------------	|------------------------------------------	|-----------	|
+| _id            	| ObjectId("ID")                           	| ObjectId  	|
+| username       	| "<username>"                             	| string    	|
+| cipher_name    	| name of created cipher                   	| string    	|
+| heading        	| automatically generated from cipher_name 	| string    	|
+| cipher_content 	| the content of cipher                    	| string    	|
+
+**posts collection**
+
+| Key          	| Value                                                           	| Data Type    	|
+|--------------	|-----------------------------------------------------------------	|--------------	|
+| _id          	| ObjectId("ID")                                                  	| ObjectId     	|
+| author       	| post creator                                                    	| string       	|
+| cipher_name  	| name of cipher that the author of the post chosen to contribute 	| string       	|
+| post_content 	| author contribution or shared idea                              	| string       	|
+| initDate     	| post date                                                       	| Date         	|
+| edit_today   	| edit date or Null                                               	| Date or Null 	|
+
+### API
+- EmailJS: Allow users to send me an email 
+
+### Tools
+- **jQuery**: JavaScript library was employed to streamline Javascript DOM manipulation throughout the project
+- **Github**: used to create repository and to host the repository
+- **Git**: version control
+- **VSCode**: IDE
+- **PyMongo**: used as the Python API for MongoDB. This API enabled me to link the data from the back-end database to the front-end app
+- **Jinja2**: Python web templating engine
+- **Heroku**: as a hosting platform to deploy the live version of the app
+
+#### Additional tools used
+- [autoprefixer](https://autoprefixer.github.io/)
+- [TinyPNG](https://tinypng.com/):used to compress my image files to try to reduce the loading time for each page
+- [Favicon Generator](https://realfavicongenerator.net/): to create favicons
+- [Balsamiq](https://balsamiq.com/) for wireframes
+- [GoogleFonts](https://fonts.google.com/) I used two complementary fonts from Google for my project: Noto Serif and Press Start 2P
+- [FontAwesome](https://fontawesome.com/)
+
+## Features
+### Existing Features
+- Users can read the website provided introduction to cryptography and cipher code chapters.
+- Users can add their own pythoc ciphers.
+- Users can see other users created ciphers.
+- Users can edit or delete only their created ciphers, these cannot be edited or deleted from any other user account.
+- Users can add posts on Hackathon community page.
+- Users can edit or delete only their created posts, these cannot be edited or deleted from any other user account.
+- All existent ciphers and every cipher that a user adds gets included into the options list on the Hackathon community page to allow a user to contribute to  that cipher.
+- EmailJS API for users to send emails to website creator.
+
+### Future Improvements 
+- Use generate_password_hash function from werkzeug.security module in order to store my users passwords as a hash and not the clear text password entered at registration.
+- Make the python code visualization to appear like in a code editor.
