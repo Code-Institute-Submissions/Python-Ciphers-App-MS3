@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	Add Post
+{% endblock %}
+
+{% block content %}
+<section class="section-padding section-margin">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center heading-margin">
+                <h1>Add New Post</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Form to Add New Post -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ url_for('add_post') }}" method="POST" class="col-12 task-box text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <select name="cipher_name" id="cipher_name">
+                                <option value="" disabled selected>Choose Cipher</option>
+                                {% for cipher in ciphers %}
+                                <option value="{{ cipher_name }}">{{ cipher.cipher_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <textarea id="post_content" name="post_content"
+                                placeholder="Post Content" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-success" type="submit">Add A New Post
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
