@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 
+{% block head_js %}
+<!-- EmailJS -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_ZKQ2ROBVro8E78nM53oVj");
+   })();
+</script>
+{% endblock %}
 
 <!-- Page Title -->
 {% block page_title %}
@@ -90,6 +101,8 @@
 	</div>
 </section>
 
+
+
 <!-- Section to link to the Hackathon Page -->
 <section class="brown-section" id="section2">
 	<div class="container">
@@ -106,9 +119,41 @@
 	</div>
 </section>
 
+<!-- Section for users to fill out a form in order to send to the Admin an Email -->
+<section class="yellow-section" id="section3">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-12 heading-margin">
+				<h4>Get in touch with us!</h4>
+			</div>
+		</div>
+		<div class="row contact-style">
+			<div class="col-12">
+				<div class="contactMe" id="message_response">
+					<form>
+						<div class="form-group">
+							<input type="text" name="name" id="name" class="form-control text-box-length"
+								placeholder="Name" maxlength="20" required />
+						</div>
+						<div class="form-group">
+							<input type="email" name="email" id="email" class="form-control text-box-length"
+								placeholder="Email address" required />
+						</div>
+						<div class="form-group">
+							<textarea name="Message" id="message" class="form-control text-box-length"
+								placeholder="Write your message here" rows="5" required></textarea>
+						</div>
+						<input type="submit" value="Submit" id="submit" class="btn btn-secondary" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 {% endblock %}
 
 {% block js_tags %}
-
+<!-- JavaScript File for the Email Form that Works Through EmailJS -->
+<script src="{{ url_for('static', filename='js/send_email.js') }}"></script>
 <script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
 {% endblock %}
