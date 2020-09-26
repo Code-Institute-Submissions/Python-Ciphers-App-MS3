@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+	Edit Post
+{% endblock %}
+
+{% block content %}
+<section class="section-padding section-margin">
+    <!-- Page Heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center heading-margin">
+                <h1>Edit Post</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Form to Edit A Post -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ url_for('update_post', post_id=posts._id) }}" method="POST" class="col-12 task-box text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <select name="cipher_name" id="cipher_name">
+                                <option value="" disabled selected>Choose Cipher</option>
+                                {% for cipher in ciphers %}
+                                {% if cipher.cipher_name == posts.cipher_name %}
+                                <option value="{{cipher.cipher_name}}" selected>{{posts.cipher_name}}</option>
+                                {% else %}
+                                <option value="{{cipher.cipher_name}}">{{cipher.cipher_name}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <textarea id="post_content" name="post_content"
+                                placeholder="Description" required>{{posts.post_content}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fa fa-share 5x" aria-hidden="true">Send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
