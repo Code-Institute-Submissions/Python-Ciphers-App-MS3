@@ -213,6 +213,19 @@ def insert_post():
     })
     return redirect(url_for('hackathon'))
 
+@app.route('/update_post/<post_id>', methods=['GET', 'POST'])
+def update_post(post_id):
+    # Allows a post to be updated and redirects to the community page
+    posts = mongo.db.posts
+    posts.update_one({'_id': ObjectId(post_id)},
+                 {"$set": {
+        "author": session['username'],
+        'cipher_name': request.form.get('cipher_name'),
+        'post_content': request.form.get('post_content'),
+        "edit_today": datetime.now(),
+    }})
+    return redirect(url_for('hackathon'))
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
