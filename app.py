@@ -169,7 +169,6 @@ def update_your_cipher(addCipher_id):
     )
     return redirect(url_for('your_ciphers', addCipher=addCipher))
 
-
 @app.route('/insert_cipher', methods=['GET', 'POST'])
 def insert_cipher():
     # Allows users to add their own ciphers to your-ciphers page
@@ -193,6 +192,12 @@ def delete_cipher(addCipher_id):
     # Allows users to delete their own added ciphers
     mongo.db.ciphers.delete_one({"_id": ObjectId(addCipher_id)})
     return redirect(url_for('your_ciphers'))
+
+@app.route('/add_post')
+def add_post():
+    # Renders the add-post page
+    initDate = datetime.today().strftime("%A %D")
+    return render_template('add-post.html', posts=mongo.db.posts.find(), initDate=initDate, ciphers=mongo.db.ciphers.find())
 
 # Prior to deployment set debug=False
 
