@@ -142,3 +142,13 @@ I used Balsamiq to create wireframes which will provide an overview of how the w
 ### Future Improvements 
 - Use generate_password_hash function from werkzeug.security module in order to store my users passwords as a hash and not the clear text password entered at registration.
 - Make the python code visualization to appear like in a code editor.
+
+## Credits
+### Content
+- Cipher pages content: [Cracking Codes with Python](https://inventwithpython.com/cracking/)
+- The photos used in this site were obtained from the below sites :
+* (https://unsplash.com/)
+* (https://pixabay.com/)
+
+- The Matrix effect was inspired from:
+(https://codepen.io/Madchatthew/pen/NWqxbZo)
