@@ -5,7 +5,7 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-
+#from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 
@@ -239,7 +239,6 @@ def delete_post(post_id):
     return redirect(url_for('hackathon'))
 
 # Prior to deployment set debug=False
-
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")),
