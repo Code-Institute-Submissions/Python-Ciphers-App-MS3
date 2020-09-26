@@ -9,12 +9,12 @@ function sendMail(name, email, message) {
         .then(
             // Function that notify the users in case the message was successfully sent
             function(response) {
-                let form = document("message_response");
+                let form = document.getElementById("message_response");
                 let replacement = form.innerHTML = "<h5>Sent! Thank you for your message!</h5>";
             },
             // Function that lets users know in case the message was not sent
             function(error) {
-                let form = document("message_response");
+                let form = document.getElementById("message_response");
 
                 form.innerHTML = "<h5>We encountered an error! Please try again.</h5>";
             });
