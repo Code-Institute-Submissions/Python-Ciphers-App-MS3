@@ -199,6 +199,20 @@ def add_post():
     initDate = datetime.today().strftime("%A %D")
     return render_template('add-post.html', posts=mongo.db.posts.find(), initDate=initDate, ciphers=mongo.db.ciphers.find())
 
+@app.route('/insert_post', methods=['GET', 'POST'])
+def insert_post():
+    # This function inserts a post and redirects to Hackathon page
+    posts = mongo.db.posts 
+    posts.insert_one({
+        "author": session['username'],
+        "cipher_name": request.form.get("cipher_name"),
+        "post_content": request.form.get("post_content"),
+        # The code below saves the date of posts and indicates if a post has been edited 
+        "initDate": datetime.today(),
+        "edit_today": None,
+    })
+    return redirect(url_for('hackathon'))
+
 # Prior to deployment set debug=False
 
 if __name__ == '__main__':
