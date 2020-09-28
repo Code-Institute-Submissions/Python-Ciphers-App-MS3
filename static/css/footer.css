@@ -1,21 +1,10 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 footer {
-    background-image: -webkit-gradient( linear, right bottom, left top, from(#7B5E7B), color-stop(#938274),to(#B9F18C));
-    background-image: -o-linear-gradient( right bottom, #7B5E7B, #938274,#B9F18C);
     background-image: linear-gradient( to left top, #7B5E7B, #938274,#B9F18C);
     background-size: cover;
     background-position: center;
     color: #fff;
     font-family:'Noto Serif';
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row wrap;
     -webkit-box-orient: horizontal;
@@ -65,8 +54,6 @@ footer li {
     font-size: 20px;
     line-height: 48px;
     -webkit-transitional: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 .button:hover {
