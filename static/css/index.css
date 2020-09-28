@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 /* matrix - Home Page*/
 .matrix {
@@ -70,10 +77,17 @@
         background-position: center;
         background-size: cover;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
@@ -89,14 +103,23 @@
         height: 350px;
         color: #fff;
         padding: 0 20px;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), color-stop(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.3))), url('../images/cipher-2.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-2.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-2.jpg');
         background-position: center;
         background-size: cover;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
@@ -116,16 +139,25 @@
         background-position: center;
         background-size: cover;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
     .box-img-3:hover {
         color: #fff;
         text-decoration: none;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4)), color-stop(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.4))), url('../images/cipher-3.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-3.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-3.jpg');
         opacity: .5;
     }
@@ -135,21 +167,36 @@
         height: 350px;
         color: #fff;
         padding: 0 10px;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), color-stop(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.3))), url('../images/cipher-4.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-4.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-4.jpg');
         background-position: center;
         background-size: cover;
+        -webkit-transition: -webkit-transform 0.2s linear;
+        transition: -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear;
         transition: transform 0.2s linear;
+        transition: transform 0.2s linear, -webkit-transform 0.2s linear;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
     .box-img-4:hover {
         color: #fff;
         text-decoration: none;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4)), color-stop(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.4))), url('../images/cipher-4.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-4.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-4.jpg');
         opacity: .5;
     }
@@ -159,21 +206,36 @@
         height: 350px;
         color: #fff;
         padding: 0 10px;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), color-stop(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.3))), url('../images/cipher-5.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-5.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-5.jpg');
         background-position: center;
         background-size: cover;
+        -webkit-transition: -webkit-transform 0.2s linear;
+        transition: -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear;
         transition: transform 0.2s linear;
+        transition: transform 0.2s linear, -webkit-transform 0.2s linear;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
     .box-img-5:hover {
         color: #fff;
         text-decoration: none;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4)), color-stop(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.4))), url('../images/cipher-5.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-5.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-5.jpg');
         opacity: .5;
     }
@@ -183,21 +245,36 @@
         height: 350px;
         color: #fff;
         padding: 0 10px;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), color-stop(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.3))), url('../images/cipher-6.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-6.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/cipher-6.jpg');
         background-position: center;
         background-size: cover;
+        -webkit-transition: -webkit-transform 0.2s linear;
+        transition: -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear;
         transition: transform 0.2s linear;
+        transition: transform 0.2s linear, -webkit-transform 0.2s linear;
         z-index: 99;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
     .box-img-6:hover {
         color: #fff;
         text-decoration: none;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4)), color-stop(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.4))), url('../images/cipher-6.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-6.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/cipher-6.jpg');
         opacity: .5;
     }
@@ -208,14 +285,27 @@
         color: #fff;
         padding: 0 10px;
         z-index: 99;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), color-stop(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.3))), url('../images/add-cipher.jpg');
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/add-cipher.jpg');
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../images/add-cipher.jpg');
         background-position: center;
         background-size: cover;
+        -webkit-transition: -webkit-transform 0.2s linear;
+        transition: -webkit-transform 0.2s linear;
+        -o-transition: transform 0.2s linear;
         transition: transform 0.2s linear;
+        transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
     
@@ -238,11 +328,8 @@
         height: 150px;
         text-decoration: none!important;
         text-transform: capitalize;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
         border-radius: 12px;
         -webkit-box-shadow: 0px 15px 0px #072609, 0px 10px 25px rgba(0,0,0,.5);
-        -moz-box-shadow: 0px 15px 0px#072609, 0px 10px 25px rgba(0,0,0,.5);
         box-shadow: 0px 15px 0px #072609 0px 10px 25px rgba(0,0,0,.5);
         margin: 50px auto;
         border-width: 10px;
@@ -250,16 +337,24 @@
         padding: 20px;
     }
     .big-button:active {
-        box-shadow: 0px 3px 0px #33CC33, 0px 3px 6px rgba(0,0,0,.9);
+        -webkit-box-shadow: 0px 3px 0px #33CC33, 0px 3px 6px rgba(0,0,0,.9);
+                box-shadow: 0px 3px 0px #33CC33, 0px 3px 6px rgba(0,0,0,.9);
         position: relative;
         top: 10px;
       }
     
     /* Form Section - Home Page */
     .contact-style {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         margin: 0;
     }
