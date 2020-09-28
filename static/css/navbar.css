@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .navbar {
     text-transform:uppercase;
     font-size:1rem;
@@ -9,6 +16,8 @@
 .nav-link {
     color: #fff!important;
     border-radius: 17px;
+    -webkit-transition: background-color .2s linear;
+    -o-transition: background-color .2s linear;
     transition: background-color .2s linear;
     text-align: center;
     font-weight: bold;
