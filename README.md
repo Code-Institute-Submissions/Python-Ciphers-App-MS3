@@ -3,6 +3,10 @@
 This full-stack website represents the third milestone project I designed at Code Institute Full Stack Development course, specifically the Data Centric Development module.
 The main focus of this project was to have a website that allows my registered users to manage a common dataset about the chosen topic, respectively cryptography techniques using Python code. 
 
+## Deployment website
+
+[Click here to view the project live](https://python-ciphers-app.herokuapp.com)
+
 ## The Goal of This Website
 The idea behind this work is to spark curiosity in learning about the history of cryptography and how we can write simple python code to encrypt messages. 
 
@@ -204,12 +208,23 @@ The website was deployed on [Heroku](https://dashboard.heroku.com/apps) followin
 4. Go to Heroku and create a new app. Set a name for this app and select the closest region.
 5. Choose Deployment method as GitHub in Heroku Dashboard and link the Github repository to the Heroku app.
 6. Go to **Settings** then **Reveal Config Vars** in Heroku Dashboard and set the values as follows:
-| config vars           | values  
-| ------------- |:-------------:|
-| IP        | 0.0.0.0 |
-| MONGO_URI | mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority      | 
-| PORT      | 5000      |
-| SECRET    | <your_secret_key>      |
+
+| config vars   | values                                                                                                                |
+| ------------- |-------------                                                                                                          |
+| IP            | 0.0.0.0                                                                                                               |
+| MONGO_URI     | mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority      | 
+| PORT          | 5000                                                                                                                  |
+| SECRET        | <your_secret_key>                                                                                                     |
+
+| Key          	| Value                                                           	| Data Type    	|
+|--------------	|-----------------------------------------------------------------	|--------------	|
+| _id          	| ObjectId("ID")                                                  	| ObjectId     	|
+| author       	| post creator                                                    	| string       	|
+| cipher_name  	| name of cipher that the author of the post chosen to contribute 	| string       	|
+| post_content 	| author contribution or shared idea                              	| string       	|
+| initDate     	| post date                                                       	| Date         	|
+| edit_today   	| edit date or Null                                               	| Date or Null 	|
+
 
 ## Credits
 ### Content
@@ -219,7 +234,7 @@ The website was deployed on [Heroku](https://dashboard.heroku.com/apps) followin
 * (https://pixabay.com/)
 
 - The Matrix effect was inspired from:
-(https://codepen.io/Madchatthew/pen/NWqxbZo)
+https://codepen.io/Madchatthew/pen/NWqxbZo
 
 ### Resources Used 
 
