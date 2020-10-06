@@ -1,5 +1,7 @@
 # Python-Ciphers-App-MS3
 
+![# Milestone 3 - Python-Ciphers-App-MS3](design/ciphers_mockup.jpg)
+
 This full-stack website represents the third milestone project I designed at Code Institute Full Stack Development course, specifically the Data Centric Development module.
 The main focus of this project was to have a website that allows my registered users to manage a common dataset about the chosen topic, respectively cryptography techniques using Python code. 
 
@@ -131,6 +133,7 @@ I used Balsamiq to create wireframes which will provide an overview of how the w
 - [Balsamiq](https://balsamiq.com/) for wireframes
 - [GoogleFonts](https://fonts.google.com/) I used two complementary fonts from Google for my project: Noto Serif and Press Start 2P
 - [FontAwesome](https://fontawesome.com/)
+- [Am I Responsive tool](http://ami.responsivedesign.is/) for the image used in the UX section showing the different screen sizes
 
 ### Validators
 - [PEP8 Validator](http://pep8online.com/)
