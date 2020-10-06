@@ -216,16 +216,6 @@ The website was deployed on [Heroku](https://dashboard.heroku.com/apps) followin
 | PORT          | 5000                                                                                                                  |
 | SECRET        | <your_secret_key>                                                                                                     |
 
-| Key          	| Value                                                           	| Data Type    	|
-|--------------	|-----------------------------------------------------------------	|--------------	|
-| _id          	| ObjectId("ID")                                                  	| ObjectId     	|
-| author       	| post creator                                                    	| string       	|
-| cipher_name  	| name of cipher that the author of the post chosen to contribute 	| string       	|
-| post_content 	| author contribution or shared idea                              	| string       	|
-| initDate     	| post date                                                       	| Date         	|
-| edit_today   	| edit date or Null                                               	| Date or Null 	|
-
-
 ## Credits
 ### Content
 - Cipher pages content: [Cracking Codes with Python](https://inventwithpython.com/cracking/)
