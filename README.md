@@ -5,6 +5,38 @@
 This full-stack website represents the third milestone project I designed at Code Institute Full Stack Development course, specifically the Data Centric Development module.
 The main focus of this project was to have a website that allows my registered users to manage a common dataset about the chosen topic, respectively cryptography techniques using Python code. 
 
+## Table of Contents
+
+- [Python-Ciphers-App-MS3](#python-ciphers-app-ms3)
+  * [Deployment website](#deployment-website)
+  * [The Goal of This Website](#the-goal-of-this-website)
+  * [UX](#ux)
+    + [User Stories](#user-stories)
+  * [Easy to navigate](#easy-to-navigate)
+  * [Security](#security)
+  * [Front-End Design](#front-end-design)
+  * [Wireframes](#wireframes)
+  * [Utilised Technologies](#utilised-technologies)
+    + [Languages](#languages)
+    + [Frameworks](#frameworks)
+    + [Database](#database)
+    + [API](#api)
+    + [Tools](#tools)
+      - [Additional tools used](#additional-tools-used)
+    + [Validators](#validators)
+  * [Features](#features)
+    + [Existing Features](#existing-features)
+    + [Future Improvements](#future-improvements)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+    + [Local Deployment](#local-deployment)
+    + [Heroku Deployment](#heroku-deployment)
+  * [Credits](#credits)
+    + [Content](#content)
+    + [Resources Used](#resources-used)
+  * [Acknowledgements](#acknowledgements)
+  * [Disclaimer](#disclaimer)
+
 ## Deployment website
 
 [Click here to view the project live](https://python-ciphers-app.herokuapp.com)
